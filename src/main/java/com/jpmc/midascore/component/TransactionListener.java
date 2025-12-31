@@ -70,6 +70,8 @@ public class TransactionListener {
                 );
 
         databaseConduit.save(record);
+
+        // 8️⃣ log WILBUR balance
         if ("wilbur".equals(sender.getName()) || "wilbur".equals(recipient.getName())) {
     UserRecord wilbur =
         "wilbur".equals(sender.getName()) ? sender : recipient;
