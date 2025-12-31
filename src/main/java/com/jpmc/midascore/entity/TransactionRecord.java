@@ -25,12 +25,15 @@ public class TransactionRecord {
     @Column(nullable = false)
     private Instant createdAt = Instant.now();
 
+    private float incentiveAmount;
+
     public TransactionRecord() {}
 
-    public TransactionRecord(UserRecord sender, UserRecord recipient, double amount) {
+    public TransactionRecord(UserRecord sender, UserRecord recipient, double amount,float incentiveAmount) {
         this.sender = sender;
         this.recipient = recipient;
         this.amount = amount;
+        this.incentiveAmount = incentiveAmount;
     }
 
     // getters / setters
